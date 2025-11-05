@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- This is the head section. -->
+    <meta charset="UTF-8">
+    <title>Parallelism - CST336</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Parallelism in Computing</h1>
+    </header>
+    <hr>
+
+    <nav>
+        <a class="current" href="page1.html">Parallelism</a>
+        <a href="page2.html">Real-time OSes</a>
+        <a href="page3.html">RISC and CISC</a>
+        <a href="page4.html">Encryption</a>
+    </nav>
+    <br><br>
+
+    <main>
+        <section>
+            <h2>Overview</h2>
+            <div>
+                Parallelism is a fundamental concept in modern computing that involves breaking down tasks into smaller subtasks that can be executed simultaneously. This approach significantly improves computational efficiency and reduces processing time. <em>In today's multi-core processor era, parallelism has become essential for high-performance computing.</em>
+                <br><br>
+                Parallel computing enables systems to handle complex calculations, large datasets, and demanding applications more effectively than traditional sequential processing methods.
+                <br><br>
+                Example of sequential vs parallel operations:
+                <br>
+                <code>
+                    //=====SEQUENTIAL EXAMPLE=====//<br>
+                    process_sequential(data_list) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;result_list = empty_list<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;foreach item in data_list<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;processed_item = operation(item)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result_list.add(processed_item)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return result_list<br>
+                    }<br>
+                    //================================//<br>
+                    <br>
+                    //=====PARALLEL EXAMPLE=====//<br>
+                    process_parallel(data_list) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;result_list = shared_concurrent_list <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;parallel for each item in data_list {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;processed_item = operation(item)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result_list.add(processed_item)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return result_list<br>
+                    }<br>
+                    <br>
+                    operation(item) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// ... some processing ...<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return processed_item<br>
+                    }<br>
+                    //==============================//
+                </code>
+            </div>
+        </section>
+
+        <section>
+            <h2>Architecture</h2>
+            <div>
+                Parallel computing architectures can be organized in various ways, including shared memory systems, distributed memory systems, and hybrid approaches. The choice of architecture depends on the specific application requirements and scalability needs.
+            </div>
+            <br>
+            <figure>
+                <img src="img/parallel/parallel.jpg" alt="Sequential vs parallel processing">
+                <figcaption>Sequential vs parallel processing<br>Source: <a href="https://www.academia.edu/47192210/Breast_Cancer_Image_Segmentation_Using_K_Means_Clustering_Based_on_GPU_Cuda_Parallel_Computing" target="_blank">https://www.academia.edu/47192210/Breast_Cancer_Image_Segmentation_Using_K_Means_Clustering_Based_on_GPU_Cuda_Parallel_Computing</a></figcaption>
+            </figure>
+            <br>
+            <div>
+                Modern processors feature multiple cores that can execute instructions independently, allowing for true parallel execution. <strong>Multi-core processors</strong> have revolutionized computing by bringing parallelism to consumer devices.
+            </div>
+        </section>
+
+        <section>
+            <h2>Limitations</h2>
+            <div>
+                Despite its advantages, parallelism faces several challenges:
+                <br><br>
+                <strong>Amdahl's Law</strong> states that the speedup of a program using multiple processors is limited by the sequential portion of the program. Not all tasks can be effectively parallelized.
+                <br><br>
+                Other limitations include:
+                <br>
+                • Overhead from synchronization and communication between parallel processes
+                <br>
+                • Complexity in debugging and testing parallel programs
+                <br>
+                • Resource contention and memory bandwidth constraints
+                <br>
+                • <em>Diminishing returns as the number of processors increases</em>
+            </div>
+        </section>
+
+        <section>
+            <h2>Benefits</h2>
+            <div>
+                The benefits of parallel computing are substantial and far-reaching:
+                <br><br>
+                <strong>Performance:</strong> Dramatically reduced execution time for computationally intensive tasks
+                <br>
+                <strong>Scalability:</strong> Ability to handle larger problems by adding more processing units
+                <br>
+                <strong>Efficiency:</strong> Better utilization of available hardware resources
+                <br>
+                <strong>Real-world applications:</strong> Enables scientific simulations, data analysis, machine learning, and graphics rendering
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <figure>
+            <img src="img/csumb_logo.png" alt="CSUMB Logo">
+        </figure>
+        CST336 Internet Programming. 2025© Idemundia<br>
+        <strong><em>Disclaimer: </em></strong>This site and all of the information contained on this site is for academic purpose only.
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+body {
+    background-color: #00022E;
+    color: gray;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+header, main, nav, footer {
+    text-align: center;
+}
+
+h1 {
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: yellow;
+}
+
+h2 {
+    color: orange;
+    margin-top: 30px;
+}
+
+nav a {
+    padding: 15px;
+    font-size: 1.8em;
+    text-decoration: none;
+    color: yellow;
+}
+
+nav a:hover {
+    border-bottom: 2px orange solid;
+    font-size: 2em;
+    transition: .9s;
+}
+
+nav a.current {
+    border-bottom: 2px darkorange solid;
+    color: darkorange;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+figure {
+    text-align: center;
+    margin: 20px 0;
+}
+
+figure img {
+    max-width: 600px;
+    border: 2px solid orange;
+    border-radius: 8px;
+}
+
+figcaption {
+    color: lightgray;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+figcaption a {
+    color: yellow;
+    text-decoration: none;
+}
+
+figcaption a:hover {
+    border-bottom: 2px orange solid;
+}
+
+footer {
+    text-align: center;
+    font-size: .8em;
+    color: lightgray;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+code {
+    display: block;
+    background-color: #1a1a2e;
+    color: #f0db4f;
+    padding: 15px;
+    border-left: 4px solid orange;
+    font-family: "Open Sans", sans-serif;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+table {
+    margin: 0 auto;
+}
+
+td {
+    padding-right: 10px;
+    font-size: 1.3em;
+}
+
+td strong {
+    color: orange;
+}
+
+#table-header {
+    background-color: #351a00;
+}
+
+.table-row {
+    background-color: #753900;
+    color: white;
+}

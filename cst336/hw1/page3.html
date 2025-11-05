@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- This is the head section. -->
+    <meta charset="UTF-8">
+    <title>RISC and CISC - CST336</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>RISC and CISC Architectures</h1>
+    </header>
+    <hr>
+
+    <nav>
+        <a href="page1.html">Parallelism</a>
+        <a href="page2.html">Real-time OSes</a>
+        <a class="current" href="page3.html">RISC and CISC</a>
+        <a href="page4.html">Encryption</a>
+    </nav>
+    <br><br>
+
+    <main>
+        <section>
+            <h2>Overview</h2>
+            <div>
+                RISC (Reduced Instruction Set Computer) and CISC (Complex Instruction Set Computer) represent two fundamental approaches to processor design. <em>RISC emphasizes simplicity with a small set of basic instructions that execute in a single clock cycle, while CISC uses a larger set of complex instructions that may take multiple cycles.</em>
+                <br><br>
+                The debate between RISC and CISC architectures has shaped modern computing, with each approach offering distinct advantages for different applications and use cases.
+                <br><br>
+                Example instruction comparison (A + B = C):
+                <br>
+                <code>
+                    // CISC: A + B = C<br>
+                    // Note that CISC allows instructions to access memory directly<br>
+                    MOV EAX, [A]&nbsp;&nbsp;&nbsp;&nbsp;; Move the value at memory address A into register EAX<br>
+                    ADD EAX, [B]&nbsp;&nbsp;&nbsp;&nbsp;; Add the value at memory address B to the value in EAX<br>
+                    MOV [C], EAX&nbsp;&nbsp;&nbsp;&nbsp;; Move the result from EAX into memory address C<br>
+                    <br>
+                    // RISC: A + B = C<br>
+                    LDR R0, [A]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; Load the value at memory address A into Register R0<br>
+                    LDR R1, [B]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; Load the value at memory address B into Register R1<br>
+                    ADD R2, R0, R1&nbsp;&nbsp;; Add the values in R0 and R1, store the result in R2<br>
+                    STR R2, [C]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; Store the value from R2 into memory address C
+                </code>
+            </div>
+        </section>
+
+        <section>
+            <h2>Architecture</h2>
+            <div>
+                RISC processors use a simplified instruction set where each instruction performs a basic operation. This design philosophy emphasizes a load-store architecture where operations work on registers, and memory access is limited to specific load and store instructions.
+            </div>
+            <br>
+            <figure>
+                <table>
+                    <tr id="table-header">
+                        <td><strong>ISA</strong></td>
+                        <td><strong>RISC</strong></td>
+                        <td><strong>CISC</strong></td>
+                    </tr>
+                    <tr class="table-row">
+                        <td><strong>Instructions</strong></td>
+                        <td>Reduced, simple, and uniform</td>
+                        <td>Complex, a large variety</td>
+                    </tr>
+                    <tr class="table-row">
+                        <td><strong>Instruction Length</strong></td>
+                        <td>Fixed-size</td>
+                        <td>Variable-size</td>
+                    </tr>
+                    <tr class="table-row">
+                        <td><strong>Clock Cycles</strong></td>
+                        <td>Instructions execute in a single cycle</td>
+                        <td>Instructions can take multiple cycles</td>
+                    </tr>
+                    <tr class="table-row">
+                        <td><strong>Memory Access</strong></td>
+                        <td>Load/store operations are separate, and memory access is register-to-register</td>
+                        <td>Memory-to-memory operations are possible with a single instruction</td>
+                    </tr>
+                    <tr class="table-row">
+                        <td><strong>Hardware/Software Emphasis</strong></td>
+                        <td>Software-centric, relying on the compiler to do the heavy lifting</td>
+                        <td>Hardware-centric, with more complex instructions built into the hardware</td>
+                    </tr>
+                    <tr class="table-row">
+                        <td><strong>Registers</strong></td>
+                        <td>More registers are used</td>
+                        <td>Fewer registers are used</td>
+                    </tr>
+                    <tr class="table-row">
+                        <td><strong>Examples</strong></td>
+                        <td>ARM (in many smartphones/tablets), SPARC, PowerPC</td>
+                        <td>Intel x86 (in desktops/servers)</td>
+                    </tr>
+                </table>
+                <figcaption>Source: <a href="https://www.geeksforgeeks.org/computer-organization-architecture/computer-organization-risc-and-cisc/" target="_blank">https://www.geeksforgeeks.org/computer-organization-architecture/computer-organization-risc-and-cisc/</a></figcaption>
+            </figure>
+            <br>
+            <div>
+                CISC processors, conversely, feature extensive instruction sets with complex operations that can directly manipulate memory operands. <strong>Modern processors often blur the line between RISC and CISC</strong>, incorporating beneficial elements from both approaches through techniques like microcode translation and instruction pipelining.
+            </div>
+        </section>
+
+        <section>
+            <h2>Limitations</h2>
+            <div>
+                Both architectures face specific challenges:
+                <br><br>
+                <strong>RISC Limitations:</strong> Requires more instructions to accomplish complex tasks, potentially increasing code size and memory bandwidth requirements.
+                <br><br>
+                <strong>CISC Limitations:</strong> Complex instructions take longer to decode and execute, making pipelining more difficult.
+                <br><br>
+                Additional considerations:
+                <br>
+                • RISC: Higher instruction count can impact cache efficiency
+                <br>
+                • CISC: Variable instruction length complicates fetch and decode stages
+                <br>
+                • Compiler optimization is more critical for RISC architectures
+                <br>
+                • <em>Neither approach is universally superior across all applications</em>
+            </div>
+        </section>
+
+        <section>
+            <h2>Benefits</h2>
+            <div>
+                Each architecture provides unique advantages tailored to different computing needs:
+                <br><br>
+                <strong>RISC Benefits:</strong>
+                <br>
+                • Simplified hardware design and faster clock speeds
+                <br>
+                • Efficient pipelining and parallel execution
+                <br>
+                • Lower power consumption in mobile devices
+                <br>
+                • Predictable execution times
+                <br><br>
+                <strong>CISC Benefits:</strong>
+                <br>
+                • Reduced code size due to complex instructions
+                <br>
+                • Better memory utilization
+                <br>
+                • Backward compatibility with legacy software
+                <br>
+                • Rich instruction set for compiler optimization
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <figure>
+            <img src="img/csumb_logo.png" alt="CSUMB Logo">
+        </figure>
+        CST336 Internet Programming. 2025© Idemundia<br>
+        <strong><em>Disclaimer: </em></strong>This site and all of the information contained on this site is for academic purpose only.
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- This is the head section. -->
+    <meta charset="UTF-8">
+    <title>Encryption - CST336</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Encryption and Data Security</h1>
+    </header>
+    <hr>
+
+    <nav>
+        <a href="page1.html">Parallelism</a>
+        <a href="page2.html">Real-time OSes</a>
+        <a href="page3.html">RISC and CISC</a>
+        <a class="current" href="page4.html">Encryption</a>
+    </nav>
+    <br><br>
+
+    <main>
+        <section>
+            <h2>Overview</h2>
+            <div>
+                Encryption is the process of encoding information in such a way that only authorized parties can access it. It transforms readable data (plaintext) into an unreadable format (ciphertext) using mathematical algorithms and keys. <em>In our digital age, encryption is fundamental to protecting sensitive information, securing communications, and maintaining privacy.</em>
+                <br><br>
+                Modern encryption systems employ sophisticated mathematical techniques to ensure data confidentiality, integrity, and authenticity across networks and storage systems.
+                <br><br>
+                Example using Python encryption library:
+                <br>
+                <code>
+                    #There are readily available libraries for use in Java, C++, Python, etc.<br>
+                    #These are lines from a Python example<br>
+                    from Cryptodome.Cipher import AES<br>
+                    ...<br>
+                    # Encrypt the data<br>
+                    ciphertext, tag = cipher.encrypt_and_digest(pad(data, AES.block_size))<br>
+                    ...<br>
+                    # Recreate AES cipher object using key<br>
+                    cipher_decrypt = AES.new(key, AES.MODE_GCM, nonce=nonce)<br>
+                    ...<br>
+                    # Decrypt the data<br>
+                    decrypted_data = unpad(cipher_decrypt.decrypt_and_verify(ciphertext, tag), AES.block_size)
+                </code>
+            </div>
+        </section>
+
+        <section>
+            <h2>Architecture</h2>
+            <div>
+                Encryption systems are built on cryptographic algorithms that can be classified into two main categories: symmetric encryption (where the same key is used for both encryption and decryption) and asymmetric encryption (where different keys are used for encryption and decryption).
+            </div>
+            <br>
+            <figure>
+                <img src="img/encryption/encryption.jpg" alt="(Symmetric) Encryption">
+                <figcaption>(Symmetric) Encryption<br>Source: <a href="https://doverunner.com/blogs/how-data-encryption-contributes-to-secure-digital-ecosystems/" target="_blank">https://doverunner.com/blogs/how-data-encryption-contributes-to-secure-digital-ecosystems/</a></figcaption>
+            </figure>
+            <br>
+            <div>
+                <strong>Public Key Infrastructure (PKI)</strong> forms the backbone of modern secure communications, utilizing asymmetric cryptography to enable secure key exchange and digital signatures. Advanced Encryption Standard (AES) and RSA are among the most widely used encryption algorithms in practice today.
+            </div>
+        </section>
+
+        <section>
+            <h2>Limitations</h2>
+            <div>
+                Despite its critical importance, encryption faces several challenges:
+                <br><br>
+                <strong>Computational overhead:</strong> Strong encryption algorithms require significant processing power, which can impact performance, especially on resource-constrained devices.
+                <br><br>
+                Other limitations include:
+                <br>
+                • Key management complexity and secure key distribution challenges
+                <br>
+                • Vulnerability to quantum computing attacks for current algorithms
+                <br>
+                • Regulatory and legal constraints in different jurisdictions
+                <br>
+                • Potential for implementation flaws compromising security
+                <br>
+                • <em>Balance between security strength and system performance</em>
+            </div>
+        </section>
+
+        <section>
+            <h2>Benefits</h2>
+            <div>
+                Encryption provides essential security benefits for digital information:
+                <br><br>
+                <strong>Confidentiality:</strong> Protects sensitive data from unauthorized access
+                <br>
+                <strong>Data Integrity:</strong> Ensures information hasn't been tampered with during transmission
+                <br>
+                <strong>Authentication:</strong> Verifies the identity of communicating parties
+                <br>
+                <strong>Non-repudiation:</strong> Prevents denial of message authorship through digital signatures
+                <br>
+                <strong>Compliance:</strong> Meets regulatory requirements for data protection (GDPR, HIPAA, etc.)
+                <br>
+                <strong>Applications:</strong> Secures online banking, e-commerce, messaging, healthcare records, and more
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <figure>
+            <img src="img/csumb_logo.png" alt="CSUMB Logo">
+        </figure>
+        CST336 Internet Programming. 2025© Idemundia<br>
+        <strong><em>Disclaimer: </em></strong>This site and all of the information contained on this site is for academic purpose only.
+    </footer>
+
+</body>
+
+</html>

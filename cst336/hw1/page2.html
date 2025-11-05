@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- This is the head section. -->
+    <meta charset="UTF-8">
+    <title>Real-time OSes - CST336</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Real-time Operating Systems</h1>
+    </header>
+    <hr>
+
+    <nav>
+        <a href="page1.html">Parallelism</a>
+        <a class="current" href="page2.html">Real-time OSes</a>
+        <a href="page3.html">RISC and CISC</a>
+        <a href="page4.html">Encryption</a>
+    </nav>
+    <br><br>
+
+    <main>
+        <section>
+            <h2>Overview</h2>
+            <div>
+                Real-time Operating Systems (RTOS) are specialized operating systems designed to process data and events within strict time constraints. Unlike general-purpose operating systems, an RTOS guarantees that critical tasks will complete within a defined time frame. <em>These systems are essential for applications where timing is crucial, such as embedded systems, industrial control, and medical devices.</em>
+                <br><br>
+                RTOS platforms prioritize deterministic behavior and predictable response times over throughput or resource utilization, making them ideal for time-critical applications.
+                <br><br>
+                A system that reads a sensor and performs actions periodically:
+                <br>
+                <code>
+                    // A system that has to read a sensor and perform some action<br>
+                    // periodically in a timely fashion might look like this.<br>
+                    <br>
+                    //=====Timer Interrupt Handler=====//<br>
+                    process_sequential(data_list) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;result_list = empty_list<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;foreach item in data_list<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;processed_item = operation(item)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result_list.add(processed_item)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return result_list<br>
+                    }<br>
+                    //================================//<br>
+                    <br>
+                    //=====Main Loop=====//<br>
+                    function main_control_task() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;while true {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;call rtos_wait_for_signal(main_control_task_id, timeout_infinite);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;call rtos_mutex_lock(resource_mutex);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;call process_sensor_data(shared_resource);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;call update_actuator_output(shared_resource.output_value);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;call rtos_mutex_unlock(resource_mutex);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br>
+                    //==============================//
+                </code>
+            </div>
+        </section>
+
+        <section>
+            <h2>Architecture</h2>
+            <div>
+                RTOS architectures typically feature a small, efficient kernel that provides task scheduling, interrupt handling, and inter-task communication. The scheduler is the heart of an RTOS, using priority-based or deadline-based algorithms to ensure time-critical tasks execute on time.
+            </div>
+            <br>
+            <figure>
+                <img src="img/rtos/rtos.jpg" alt="Genral purpose OS vs realtime OS">
+                <figcaption>Genral purpose OS vs realtime OS<br>Source: <a href="https://www.differencebetween.net/technology/difference-between-rtos-and-os-2/" target="_blank">https://www.differencebetween.net/technology/difference-between-rtos-and-os-2/</a></figcaption>
+            </figure>
+            <br>
+            <div>
+                Modern RTOS implementations support both hard real-time (missing a deadline is catastrophic) and soft real-time (missing occasional deadlines is acceptable) systems. <strong>Priority-based preemptive scheduling</strong> ensures that high-priority tasks can interrupt lower-priority tasks when needed.
+            </div>
+        </section>
+
+        <section>
+            <h2>Limitations</h2>
+            <div>
+                Real-time operating systems face several constraints:
+                <br><br>
+                <strong>Limited functionality:</strong> RTOS platforms typically provide fewer features than general-purpose operating systems to maintain predictability and efficiency.
+                <br><br>
+                Additional challenges include:
+                <br>
+                • Higher development complexity and specialized knowledge requirements
+                <br>
+                • Resource constraints in embedded environments
+                <br>
+                • Difficulty in testing and verifying timing requirements
+                <br>
+                • Limited application portability between different RTOS platforms
+                <br>
+                • <em>Trade-off between functionality and deterministic behavior</em>
+            </div>
+        </section>
+
+        <section>
+            <h2>Benefits</h2>
+            <div>
+                Real-time operating systems provide critical advantages for time-sensitive applications:
+                <br><br>
+                <strong>Determinism:</strong> Guaranteed response times and predictable task execution
+                <br>
+                <strong>Reliability:</strong> Highly stable and dependable operation in critical scenarios
+                <br>
+                <strong>Efficiency:</strong> Optimized for minimal overhead and fast interrupt response
+                <br>
+                <strong>Safety:</strong> Essential for applications where timing failures could be dangerous
+                <br>
+                <strong>Applications:</strong> Used in automotive systems, aerospace, medical equipment, and industrial automation
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <figure>
+            <img src="img/csumb_logo.png" alt="CSUMB Logo">
+        </figure>
+        CST336 Internet Programming. 2025© Idemundia<br>
+        <strong><em>Disclaimer: </em></strong>This site and all of the information contained on this site is for academic purpose only.
+    </footer>
+
+</body>
+
+</html>
