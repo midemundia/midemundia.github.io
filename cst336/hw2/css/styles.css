@@ -1,0 +1,8 @@
+/* Webpage background styling */
+body {
+  background-image: url('../img/yakko_world.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
