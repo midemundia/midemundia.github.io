@@ -157,7 +157,7 @@ function gradeQuiz(){
   localStorage.setItem("total_attempts", attempts);
 
   if (score > 80) {
-    alert("Nice work on the excellent score!");
+    alert("Excellent score! Yakko is impressed!");
   }
 
 } //gradeQuiz
