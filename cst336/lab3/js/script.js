@@ -13,6 +13,20 @@ document.querySelector("#signupForm").addEventListener("submit", function(event)
 
 //functions
 
+async function displayStates() {
+    let url = 'https://csumb.space/api/allStatesAPI.php';
+    let response = await fetch(url);
+    let data = await response.json();
+    let stateDropdown = document.querySelector("#state");
+    stateDropdown.innerHTML = "<option>Select One</option>";
+    for (let i = 0; i < data.length; i++) {
+        stateDropdown.innerHTML += `<option value="${data[i].abbreviation}">${data[i].state}</option>`;
+    }
+}
+
+//Call displayStates when page loads
+displayStates();
+
 //Displaying city from Web API after entering a zip code
 async function displayCity() {
     let zipCode = document.querySelector("#zip").value;
@@ -136,4 +150,3 @@ function suggestPassword() {
     }
     return password;
 }
-
