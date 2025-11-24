@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exchange Rates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>International Trading Partnerships and Population Data</h1>
+    </header>
+    <hr>
+    <div class="main-prompt">
+        <u>Let's look at population data for regional economic alliances.</u>
+    </div>
+    <div class="container p-4">
+        <form id="partnership-form">
+            Which trade partnership would you like to explore?<br>
+            <input type="radio" name="partnership" value="BR"> Brazil Russia India China South Africa (BRICS)<br>
+            <input type="radio" name="partnership" value="EW"> Economic Community of West African States (ECOWAS)<br>
+            <input type="radio" name="partnership" value="EU"> European Union (EU)<br>
+            <input type="radio" name="partnership" value="ME"> Southern Common Market (MERCOSUR)<br>
+            <input type="radio" name="partnership" value="OP"> Organization of the Petroleum Exporting Countries (OPEC)<br>
+            <input type="radio" name="partnership" value="PA"> Pacific Alliance<br>
+            <input type="radio" name="partnership" value="RC"> Regional Comprehensive Economic Partnership (RCEP)<br>
+            <input type="radio" name="partnership" value="US"> United States-Mexico-Canada Agreement (USMCA)<br><br>
+
+            For which year?<br>
+            <select id="year-select" name="year">
+                <option value="">-Select One-</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+            </select>
+        </form>
+    </div>
+    <div class="container p-4">
+        <button id="explore-btn" class="btn btn-primary">Explore Exchange Rates</button>
+    </div>
+    <br>
+    <div class="response-display">
+        <h2 id="population-data" class="text-info"></h2>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

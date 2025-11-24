@@ -1,0 +1,71 @@
+header {
+    text-align: center;
+    color: gray;
+}
+
+hr {
+    border: none;
+    height: 6px;
+    background-color: yellow;
+    margin: 0;
+}
+
+body {
+    background-color: #00022E;
+    color: darkorange;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 1000;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+h1 {
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 1000;
+    font-style: normal;
+}
+
+.main-prompt {
+    color: yellowgreen;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.response-display {
+    margin-left: 15px;
+}
+
+.trade-group-name {
+    color: darkorange;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#partnership-form {
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+#year-select {
+    padding: 8px 12px;
+    background-color: #1a1a4d;
+    color: darkorange;
+    border: 2px solid darkorange;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#explore-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border-left: 4px solid yellow;
+}
